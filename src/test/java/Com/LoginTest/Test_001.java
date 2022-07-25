@@ -20,8 +20,8 @@ public class Test_001 extends BaseClass  {
  public void verifyLoginpage() {
 	LoginPom login=PageFactory.initElements(driver, LoginPom.class);
 //actions
-  Library.Custom_Sendkey(login.gettxt_Email(),excel.getStringData("Sheet1", 0, 0));
-  Library.Custom_Sendkey(login.gettxt_Password(), excel.getStringData("sheet1", 0, 1));
+  Library.Custom_Sendkey(login.gettxt_Email(),excel.getStringData("Sheet1", 0, 0),"Email");
+  Library.Custom_Sendkey(login.gettxt_Password(), excel.getStringData("sheet1", 0, 1),"Password");
 //  login.getbtn_login().click();
   
  }

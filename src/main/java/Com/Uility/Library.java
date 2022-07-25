@@ -2,14 +2,19 @@ package Com.Uility;
 
 import org.openqa.selenium.WebElement;
 
-public class Library   {
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
-	public static void Custom_Sendkey(WebElement element, String text) {
+public class Library   {
+	public static ExtentTest test;
+
+	public static void Custom_Sendkey(WebElement element, String text ,String fieldname) {
 		try {
 			element.sendKeys(text);
+			test.log(Status.PASS, fieldname+"Value succesfull send ="+text);
 		}catch (Exception e) {
-			System.out.println(e.getMessage());
-			
+			test.log(Status.FAIL, e.getMessage());
+					
 		}
         
 	
